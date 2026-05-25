@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wood-50: #FDF8F3;
+  --color-wood-100: #F5E6D3;
+  --color-wood-200: #E8CDA8;
+  --color-wood-300: #D4A574;
+  --color-wood-400: #C67B3D;
+  --color-wood-500: #A85D1E;
+  --color-wood-600: #8B4513;
+  --color-wood-700: #6B3410;
+  --color-wood-800: #4A2510;
+  --color-wood-900: #2D1708;
+  --font-heading: "Georgia", "Times New Roman", serif;
+  --font-body: "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
