@@ -1,23 +1,22 @@
 export default function Footer() {
   return (
     <footer className="bg-wood-800 text-wood-100 py-10 px-4">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-sm">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 md:gap-8 text-sm">
         <div>
-          <h4 className="font-heading text-lg font-bold text-white mb-3">Roofer</h4>
-          <p>Profesjonalne usługi ciesielskie i dekarskie w Zielonej Górze i okolicach.</p>
+          <h4 className="font-heading text-lg font-bold text-white mb-3">Dach-Rem</h4>
+          <p>Profesjonalne usługi dekarsko-blacharskie w Zielonej Górze i okolicach od 1999 roku.</p>
         </div>
         <div>
           <h4 className="font-heading text-lg font-bold text-white mb-3">Kontakt</h4>
-          <p>ul. Wojska Polskiego 100</p>
-          <p>65-001 Zielona Góra</p>
-          <p className="mt-2">tel. +48 123 456 789</p>
-          <p>email: kontakt@roofer.pl</p>
+          <p>Kwiatowa 2</p>
+          <p>66-016 Nietków</p>
+          <p className="mt-2">tel. 502 067 187</p>
+          <p>email: sddachy@wp.pl</p>
         </div>
         <div>
           <h4 className="font-heading text-lg font-bold text-white mb-3">Godziny otwarcia</h4>
-          <p>Pn–Pt: 7:00 – 17:00</p>
-          <p>Sobota: 8:00 – 14:00</p>
-          <p className="mt-2 text-wood-200 text-xs">© {new Date().getFullYear()} Roofer. Wszelkie prawa zastrzeżone.</p>
+          <p>Pn–Pt: 8:00 – 18:00</p>
+          <p className="mt-2 text-wood-200 text-xs md:text-sm">© {new Date().getFullYear()} Dach-Rem Drzewiecki Sławomir. Wszelkie prawa zastrzeżone.</p>
         </div>
       </div>
     </footer>

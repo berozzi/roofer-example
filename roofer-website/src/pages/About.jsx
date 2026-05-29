@@ -7,31 +7,31 @@ export default function About() {
         <div>
           <h1 className="font-heading text-4xl md:text-5xl text-wood-700 mb-4">O nas</h1>
           <p className="text-wood-500 mb-4">
-            Jesteśmy rodzinną firmą z Zielonej Góry. Od ponad 12 lat zajmujemy się ciesielstwem i dekarstwem – stawiamy dachy, robimy więźby, wykonujemy renowacje.
+            Firma <strong>Dach-Rem</strong> działa nieprzerwanie od 1999 roku w branży dekarskiej w Zielonej Górze. Naszą specjalnością są usługi dekarsko-blacharskie – wykonujemy konstrukcje dachowe, pokrycia dachowe wszelkiego typu, docieplanie oraz naprawy dachów.
           </p>
           <p className="text-wood-500 mb-4">
-            Siedziba znajduje się przy ul. Wojska Polskiego 100. To właśnie tutaj nasi klienci mogą obejrzeć próbki materiałów i omówić szczegóły zlecenia.
+            Nasza kadra to kompetentni i doświadczeni pracownicy, gwarantujący najwyższą jakość świadczonych usług, solidność oraz profesjonalną obsługę. Od początku działalności należymy do grupy <strong>Velux Team</strong>.
           </p>
           <p className="text-wood-500">
-            Stawiamy na rzetelność, terminowość i dobre relacje. Każdy dach to dla nas wizytówka.
+            Siedziba firmy znajduje się w Nietkowie przy ul. Kwiatowej 2. Zapraszamy do kontaktu – doradzimy i pomożemy dobrać najlepsze rozwiązanie dla Twojego dachu.
           </p>
         </div>
-        <div className="bg-wood-100 rounded-2xl h-80 flex items-center justify-center text-wood-300 text-lg">
+        <div className="bg-wood-100 rounded-2xl h-56 md:h-80 flex items-center justify-center text-wood-300 text-lg">
           <img
             src={companyPhoto}
-            alt="Ekipa Roofer"
+            alt="Ekipa Dach-Rem"
             className="w-full h-full object-cover rounded-2xl"
           />
         </div>
       </section>
 
-      <section className="bg-wood-50 border border-wood-100 rounded-2xl p-8 md:p-12">
+      <section className="bg-wood-50 border border-wood-100 rounded-2xl p-6 md:p-12">
         <h2 className="font-heading text-2xl text-wood-700 mb-6">Nasze wartości</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { icon: '🪚', title: 'Fachowość', text: 'Wykwalifikowana ekipa, ciągłe szkolenia i znajomość nowoczesnych technologii.' },
-            { icon: '📋', title: 'Rzetelność', text: 'Wyceniamy bez ukrytych kosztów. Dotrzymujemy terminów i ustaleń.' },
-            { icon: '🤝', title: 'Zaufanie', text: 'Pracujemy tak, jakbyśmy robili dach dla siebie. Gwarancja na każdą usługę.' },
+            { icon: '🪚', title: 'Doświadczenie', text: 'Działamy od 1999 roku – kompetentna kadra, specjalistyczny sprzęt i wieloletnie doświadczenie.' },
+            { icon: '📋', title: 'Profesjonalizm', text: 'Pełen profesjonalizm, solidność, rzetelność oraz dokładność przeprowadzanych prac dekarskich.' },
+            { icon: '🤝', title: 'Velux Team', text: 'Członek grupy Velux Team od początku działalności – gwarancja najwyższej jakości.' },
           ].map((v, i) => (
             <div key={i}>
               <div className="text-3xl mb-2">{v.icon}</div>

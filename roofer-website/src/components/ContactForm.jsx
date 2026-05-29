@@ -23,22 +23,22 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-medium text-wood-700 mb-1">Imię i nazwisko *</label>
-          <input required className="w-full border border-wood-200 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
+          <input required className="w-full border border-wood-200 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
         </div>
         <div>
           <label className="block text-sm font-medium text-wood-700 mb-1">E-mail *</label>
-          <input type="email" required className="w-full border border-wood-200 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
+          <input type="email" required className="w-full border border-wood-200 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
         </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-wood-700 mb-1">Telefon</label>
-        <input type="tel" className="w-full border border-wood-200 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
+        <input type="tel" className="w-full border border-wood-200 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800" />
       </div>
       <div>
         <label className="block text-sm font-medium text-wood-700 mb-1">Wiadomość *</label>
-        <textarea required rows={5} className="w-full border border-wood-200 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800 resize-y" />
+        <textarea required rows={5} className="w-full border border-wood-200 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-wood-300 text-wood-800 resize-y" />
       </div>
-      <button type="submit" className="bg-wood-500 hover:bg-wood-600 text-white px-8 py-3 rounded-lg font-semibold transition">
+      <button type="submit" className="bg-wood-500 hover:bg-wood-600 text-white px-8 py-4 rounded-lg font-semibold transition w-full sm:w-auto">
         Wyślij wiadomość
       </button>
     </form>

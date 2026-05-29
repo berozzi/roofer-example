@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 const projects = [
-  { id: 1, url: 'https://images.unsplash.com/photo-1632190349996-9c6e4b2e058b?w=500&q=80', title: 'Dach domku jednorodzinnego – Zielona Góra', desc: 'Więźba dachowa + dachówka ceramiczna. Pow. 180m².' },
-  { id: 2, url: 'https://images.unsplash.com/photo-1590086782792-42dd2350140d?w=500&q=80', title: 'Konstrukcja dachu – Świdnica', desc: 'Drewno klejone, dach wielospadowy.' },
-  { id: 3, url: 'https://images.unsplash.com/photo-1581579438747-1dc8d17b4d39?w=500&q=80', title: 'Remont dachu – ul. Wojska Polskiego', desc: 'Wymiana łat, deskowanie, nowa dachówka.' },
-  { id: 4, url: 'https://images.unsplash.com/photo-1581622550553-bf9300cf9d2f?w=500&q=80', title: 'Wiata garażowa – Nowa Sól', desc: 'Słupy drewniane, dach jednospadowy, blachodachówka.' },
-  { id: 5, url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80', title: 'Domek letniskowy – Jezioro Rudno', desc: 'Konstrukcja z bali, dach z gontu bitumicznego.' },
-  { id: 6, url: 'https://images.unsplash.com/photo-1590184847800-3de11b0a60c2?w=500&q=80', title: 'Obróbki blacharskie – ZG', desc: 'Rynny, podbitki, pas nadrynnowy.' },
-  { id: 7, url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80', title: 'Tarac dachowy – Zielona Góra', desc: 'Konstrukcja nośna + deska kompozytowa.' },
-  { id: 8, url: 'https://images.unsplash.com/photo-1573033546140-c7ca2e7a88bb?w=500&q=80', title: 'Więźba tradycyjna – Sulechów', desc: 'Ciesielka na miarę, montaż na gotowo.' },
+  { id: 1, url: '', title: 'Dach domku jednorodzinnego – Zielona Góra', desc: 'Więźba dachowa + dachówka ceramiczna. Pow. 180m².' },
+  { id: 2, url: '', title: 'Konstrukcja dachu – Świdnica', desc: 'Drewno klejone, dach wielospadowy.' },
+  { id: 3, url: '', title: 'Remont dachu – Nietków', desc: 'Wymiana łat, deskowanie, nowa dachówka.' },
+  { id: 4, url: '', title: 'Wiata garażowa – Nowa Sól', desc: 'Słupy drewniane, dach jednospadowy, blachodachówka.' },
+  { id: 5, url: '', title: 'Domek letniskowy – Jezioro Rudno', desc: 'Konstrukcja z bali, dach z gontu bitumicznego.' },
+  { id: 6, url: '', title: 'Obróbki blacharskie – ZG', desc: 'Rynny, podbitki, pas nadrynnowy.' },
+  { id: 7, url: '', title: 'Taras dachowy – Zielona Góra', desc: 'Konstrukcja nośna + deska kompozytowa.' },
+  { id: 8, url: '', title: 'Więźba tradycyjna – Sulechów', desc: 'Ciesielka na miarę, montaż na gotowo.' },
 ]
 
 export default function Gallery() {
@@ -29,10 +29,14 @@ export default function Gallery() {
               className="group relative rounded-xl overflow-hidden cursor-pointer border border-wood-100 bg-wood-50"
               onClick={() => setLightbox(p)}
             >
-              <img src={p.url} alt={p.title} className="w-full h-52 object-cover group-hover:scale-105 transition duration-500" />
+              <div className="w-full h-52 bg-linear-to-br from-wood-100 to-wood-200 flex items-center justify-center p-4">
+                <div className="text-center">
+                  <span className="text-3xl">🏠</span>
+                  <h3 className="font-heading font-bold text-wood-600 text-sm mt-2">{p.title}</h3>
+                </div>
+              </div>
               <div className="p-3">
-                <h3 className="font-heading font-bold text-wood-700 text-sm">{p.title}</h3>
-                <p className="text-xs text-wood-400 mt-0.5">{p.desc}</p>
+                <p className="text-xs sm:text-sm text-wood-400">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -40,13 +44,15 @@ export default function Gallery() {
       </div>
 
       {lightbox && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
-          <div className="max-w-2xl w-full bg-white rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <img src={lightbox.url} alt={lightbox.title} className="w-full h-72 md:h-96 object-cover" />
+        <div className="fixed inset-0 bg-black/70 z-60 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
+          <div className="max-w-2xl w-full bg-white rounded-2xl overflow-hidden max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="w-full h-64 md:h-96 bg-linear-to-br from-wood-100 to-wood-200 flex items-center justify-center">
+              <span className="text-6xl">🏠</span>
+            </div>
             <div className="p-6">
               <h3 className="font-heading font-bold text-wood-700 text-lg">{lightbox.title}</h3>
               <p className="text-wood-500 mt-1">{lightbox.desc}</p>
-              <button onClick={() => setLightbox(null)} className="mt-4 text-sm text-wood-400 hover:text-wood-600 transition">Zamknij</button>
+              <button onClick={() => setLightbox(null)} className="mt-4 px-4 py-2 text-sm text-wood-400 hover:text-wood-600 transition border border-wood-200 rounded-lg">Zamknij</button>
             </div>
           </div>
         </div>

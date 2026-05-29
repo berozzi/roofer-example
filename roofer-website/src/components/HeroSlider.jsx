@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 
 const slides = [
   {
-    url: 'https://images.unsplash.com/photo-1632190349996-9c6e4b2e058b?w=1400&q=80',
+    url: '',
     title: 'Profesjonalne Dekarstwo',
     subtitle: 'Solidne dachy na lata – doświadczenie, precyzja, jakość',
   },
   {
-    url: 'https://images.unsplash.com/photo-1590086782792-42dd2350140d?w=1400&q=80',
+    url: '',
     title: 'Ciesielstwo z Pasją',
     subtitle: 'Konstrukcje dachowe, więźby, drewniane elementy',
   },
   {
-    url: 'https://images.unsplash.com/photo-1581579438747-1dc8d17b4d39?w=1400&q=80',
+    url: '',
     title: 'Renowacje i Naprawy',
     subtitle: 'Przywracamy blask starym dachom – od deszczułki po dachówkę',
   },
@@ -30,31 +30,32 @@ export default function HeroSlider() {
   }, [next])
 
   return (
-    <section className="relative h-[75vh] min-h-[400px] overflow-hidden">
+    <section className="relative h-[60vh] md:h-[75vh] min-h-80 overflow-hidden bg-wood-200">
       {slides.map((s, i) => (
         <div
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? 'opacity-100' : 'opacity-0'}`}
         >
-          <img src={s.url} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-wood-900/70 via-wood-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-wood-900/80 via-wood-900/40 to-wood-900/10" />
         </div>
       ))}
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center text-white px-4 z-10">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
-          {slides[idx].title}
-        </h1>
-        <p className="text-lg md:text-xl mb-6 text-wood-100 drop-shadow">
-          {slides[idx].subtitle}
-        </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <Link to="/realizacje" className="bg-wood-400 hover:bg-wood-500 text-white px-6 py-3 rounded font-semibold transition">
-            Zobacz realizacje
-          </Link>
-          <Link to="/kontakt" className="bg-white/20 hover:bg-white/30 backdrop-blur text-white px-6 py-3 rounded font-semibold border border-white/40 transition">
-            Kontakt
-          </Link>
+      <div className="absolute inset-0 flex items-center justify-center px-4 z-10">
+        <div className="text-center text-white max-w-2xl">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg break-words">
+            {slides[idx].title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl mb-8 text-wood-100 drop-shadow">
+            {slides[idx].subtitle}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link to="/realizacje" className="bg-wood-400 hover:bg-wood-500 text-white px-6 py-3 rounded font-semibold transition text-center">
+              Zobacz realizacje
+            </Link>
+            <Link to="/kontakt" className="bg-white/20 hover:bg-white/30 backdrop-blur text-white px-6 py-3 rounded font-semibold border border-white/40 transition text-center">
+              Kontakt
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -64,6 +65,7 @@ export default function HeroSlider() {
             key={i}
             onClick={() => setIdx(i)}
             className={`w-2.5 h-2.5 rounded-full transition ${i === idx ? 'bg-white' : 'bg-white/40'}`}
+            aria-label={`Slajd ${i + 1}`}
           />
         ))}
       </div>

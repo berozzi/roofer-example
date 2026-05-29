@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
@@ -13,15 +13,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-wood-50/95 backdrop-blur shadow-sm z-50 border-b border-wood-100">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 text-wood-700 font-heading font-bold text-xl tracking-tight">
-          <span className="text-2xl">🏠</span>
-          <span>Roofer</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo.svg" alt="Dach-Rem" className="h-9" />
         </Link>
 
-        <button className="md:hidden text-wood-700 text-2xl" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-wood-700 text-2xl p-3"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? 'Zamknij menu' : 'Otwórz menu'}
+          aria-expanded={open}
+        >
           {open ? '✕' : '☰'}
         </button>
 
@@ -31,7 +40,7 @@ export default function Navbar() {
               <Link
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className={`block py-2 md:py-0 text-sm font-medium transition-colors ${
+                className={`block py-3 md:py-0 text-sm font-medium transition-colors ${
                   pathname === l.to ? 'text-wood-500' : 'text-wood-700 hover:text-wood-400'
                 }`}
               >
