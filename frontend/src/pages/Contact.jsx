@@ -29,12 +29,15 @@ export default function Contact() {
             </div>
 
             <div className="bg-wood-50 border border-wood-100 rounded-2xl p-6">
-              <h3 className="font-heading font-bold text-wood-700 mb-2">Znajdziesz nas</h3>
-              <div className="bg-wood-200 h-48 md:h-40 rounded-lg flex items-center justify-center text-wood-400 text-sm">
-                <a href="https://maps.google.com/?q=Kwiatowa+2+Nietków" target="_blank" rel="noopener noreferrer" className="hover:text-wood-600 transition underline">
-                  Kliknij, aby zobaczyć na mapie Google
-                </a>
-              </div>
+              
+              <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.932125661473!2d15.3557551763003!3d52.02522617274357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47063f93a2873abd%3A0xf52e64e3e95c2ec6!2sDach-Rem!5e1!3m2!1spl!2spl!4v1780298319604!5m2!1spl!2spl"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Dach-Rem mapa"
+      />
             </div>
           </div>
 
