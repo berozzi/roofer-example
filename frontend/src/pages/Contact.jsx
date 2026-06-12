@@ -5,20 +5,28 @@ export default function Contact() {
         <h1 className="font-heading text-4xl md:text-5xl text-wood-700 mb-4">Kontakt</h1>
 
         <p className="text-wood-600 text-lg mb-8">
-          Wyślij wiadomość
+          Wyślij wiadomość lub zadzwoń
         </p>
 
-        <form action="mailto:sddachy@wp.pl" method="GET" encType="text/plain" className="mb-12">
-          <input type="hidden" name="subject" value="Zapytanie dachrem.zgora.pl" />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <form action="mailto:sddachy@wp.pl" method="GET" encType="text/plain" className="w-full sm:w-auto">
+            <input type="hidden" name="subject" value="Zapytanie dachrem.zgora.pl" />
+            <a
+              href="mailto:sddachy@wp.pl?subject=Zapytanie%20dachrem.zgora.pl"
+              className="flex items-center justify-center gap-3 bg-wood-500 hover:bg-wood-600 text-white px-8 py-4 rounded-2xl font-semibold transition text-lg shadow-sm hover:shadow-md"
+            >
+              sddachy@wp.pl
+            </a>
+          </form>
           <a
-            href="mailto:sddachy@wp.pl?subject=Zapytanie%20dachrem.zgora.pl"
-            className="inline-flex items-center gap-3 bg-wood-500 hover:bg-wood-600 text-white px-10 py-5 rounded-2xl font-semibold transition text-xl shadow-sm hover:shadow-md"
+            href="tel:502067187"
+            className="flex items-center justify-center gap-3 bg-wood-500 hover:bg-wood-600 text-white px-8 py-4 rounded-2xl font-semibold transition text-lg shadow-sm hover:shadow-md w-full sm:w-auto"
           >
-            sddachy@wp.pl
+            502 067 187
           </a>
-        </form>
+        </div>
 
-        <div className="bg-wood-50 border border-wood-100 rounded-2xl p-6 mb-6 text-center">
+        <div className="bg-wood-50 border border-wood-100 rounded-2xl p-5 sm:p-6 mb-4 sm:mb-6">
           <h3 className="font-heading font-bold text-wood-700 mb-4">Dane kontaktowe</h3>
           <div className="space-y-3 text-sm text-wood-600">
             <p><span className="font-semibold">Adres:</span> Kwiatowa 2, 66-016 Nietków</p>
@@ -27,7 +35,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="bg-wood-50 border border-wood-100 rounded-2xl p-6 mb-12 text-center">
+        <div className="bg-wood-50 border border-wood-100 rounded-2xl p-5 sm:p-6 mb-10 sm:mb-12">
           <h3 className="font-heading font-bold text-wood-700 mb-4">Godziny otwarcia</h3>
           <div className="space-y-2 text-sm text-wood-600">
             <p><span className="font-semibold">Pn–Pt:</span> 8:00 – 18:00</p>
