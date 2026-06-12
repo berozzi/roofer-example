@@ -5,7 +5,7 @@ const links = [
   { to: '/', label: 'Strona Główna' },
   { to: '/o-nas', label: 'O Nas' },
   { to: '/realizacje', label: 'Realizacje' },
-  { to: '/opinie', label: 'Opinie' },
+  { to: '/blog', label: 'Blog' },
   { to: '/kontakt', label: 'Kontakt' },
 ]
 

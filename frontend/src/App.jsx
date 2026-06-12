@@ -4,7 +4,12 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Gallery from './pages/Gallery'
-import Reviews from './pages/Reviews'
+import Blog from './pages/Blog'
+import RodzajePokryc from './pages/blog/RodzajePokryc'
+import JakWybracDekarza from './pages/blog/JakWybracDekarza'
+import KonserwacjaDachu from './pages/blog/KonserwacjaDachu'
+import WiezbaDachowa from './pages/blog/WiezbaDachowa'
+import BlachodachowkaCeramiczna from './pages/blog/BlachodachowkaCeramiczna'
 import Contact from './pages/Contact'
 
 export default function App() {
@@ -19,7 +24,12 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/o-nas" element={<About />} />
           <Route path="/realizacje" element={<Gallery />} />
-          <Route path="/opinie" element={<Reviews />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/rodzaje-pokryc-dachowych" element={<RodzajePokryc />} />
+          <Route path="/blog/jak-wybrac-dekarza" element={<JakWybracDekarza />} />
+          <Route path="/blog/konserwacja-dachu" element={<KonserwacjaDachu />} />
+          <Route path="/blog/wiezba-dachowa-tradycyjna-czy-klejona" element={<WiezbaDachowa />} />
+          <Route path="/blog/blachodachowka-czy-dachowka-ceramiczna" element={<BlachodachowkaCeramiczna />} />
           <Route path="/kontakt" element={<Contact />} />
         </Routes>
       </main>
