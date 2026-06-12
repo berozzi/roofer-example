@@ -1,0 +1,12 @@
+{
+  "name": "Dach-Rem – Usługi Dekarsko-Blacharskie",
+  "short_name": "Dach-Rem",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6f0",
+  "theme_color": "#8B4513",
+  "icons": [
+    { "src": "/icon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
