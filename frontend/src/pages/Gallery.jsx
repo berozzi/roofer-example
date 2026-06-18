@@ -1,14 +1,20 @@
 import { useState } from 'react'
+import img1 from '../assets/dachrem1.webp'
+import img2 from '../assets/dachrem2.webp'
+import img3 from '../assets/dachrem3.webp'
+import img4 from '../assets/dachrem4.webp'
+
+const images = [img1, img2, img3, img4]
 
 const projects = [
-  { id: 1, url: '', title: 'Dach domku jednorodzinnego – Zielona Góra', desc: 'Więźba dachowa + dachówka ceramiczna. Pow. 180m².' },
-  { id: 2, url: '', title: 'Konstrukcja dachu – Świdnica', desc: 'Drewno klejone, dach wielospadowy.' },
-  { id: 3, url: '', title: 'Remont dachu – Nietków', desc: 'Wymiana łat, deskowanie, nowa dachówka.' },
-  { id: 4, url: '', title: 'Wiata garażowa – Nowa Sól', desc: 'Słupy drewniane, dach jednospadowy, blachodachówka.' },
-  { id: 5, url: '', title: 'Domek letniskowy – Jezioro Rudno', desc: 'Konstrukcja z bali, dach z gontu bitumicznego.' },
-  { id: 6, url: '', title: 'Obróbki blacharskie – ZG', desc: 'Rynny, podbitki, pas nadrynnowy.' },
-  { id: 7, url: '', title: 'Taras dachowy – Zielona Góra', desc: 'Konstrukcja nośna + deska kompozytowa.' },
-  { id: 8, url: '', title: 'Więźba tradycyjna – Sulechów', desc: 'Ciesielka na miarę, montaż na gotowo.' },
+  { id: 1, img: img1, title: 'Dach domku jednorodzinnego – Zielona Góra', desc: 'Więźba dachowa + dachówka ceramiczna. Pow. 180m².', alt: 'Dach domku jednorodzinnego z dachówki ceramicznej w Zielonej Górze' },
+  { id: 2, img: img2, title: 'Konstrukcja dachu – Świdnica', desc: 'Drewno klejone, dach wielospadowy.', alt: 'Konstrukcja więźby dachowej z drewna klejonego w Świdnicy' },
+  { id: 3, img: img3, title: 'Remont dachu – Nietków', desc: 'Wymiana łat, deskowanie, nowa dachówka.', alt: 'Remont dachu z wymianą łat i deskowania w Nietkowie' },
+  { id: 4, img: img4, title: 'Wiata garażowa – Nowa Sól', desc: 'Słupy drewniane, dach jednospadowy, blachodachówka.', alt: 'Wiata garażowa z blachodachówki w Nowej Soli' },
+  { id: 5, img: img1, title: 'Domek letniskowy – Jezioro Rudno', desc: 'Konstrukcja z bali, dach z gontu bitumicznego.', alt: 'Domek letniskowy z dachem z gontu bitumicznego nad Jeziorem Rudno' },
+  { id: 6, img: img2, title: 'Obróbki blacharskie – ZG', desc: 'Rynny, podbitki, pas nadrynnowy.', alt: 'Obróbki blacharskie – montaż rynien i podbitek w Zielonej Górze' },
+  { id: 7, img: img3, title: 'Taras dachowy – Zielona Góra', desc: 'Konstrukcja nośna + deska kompozytowa.', alt: 'Taras dachowy z deski kompozytowej w Zielonej Górze' },
+  { id: 8, img: img4, title: 'Więźba tradycyjna – Sulechów', desc: 'Ciesielka na miarę, montaż na gotowo.', alt: 'Tradycyjna więźba dachowa wykonana w Sulechowie' },
 ]
 
 export default function Gallery() {
@@ -26,17 +32,18 @@ export default function Gallery() {
           {projects.map((p) => (
             <div
               key={p.id}
-              className="group relative rounded-xl overflow-hidden cursor-pointer border border-wood-100 bg-wood-50"
+              className="group relative rounded-xl overflow-hidden cursor-pointer border border-wood-200 bg-wood-100"
               onClick={() => setLightbox(p)}
             >
-              <div className="w-full h-52 bg-linear-to-br from-wood-100 to-wood-200 flex items-center justify-center p-4">
-                <div className="text-center">
-                  <span className="text-3xl">🏠</span>
-                  <h3 className="font-heading font-bold text-wood-600 text-sm mt-2">{p.title}</h3>
-                </div>
-              </div>
+              <img
+                src={p.img}
+                alt={p.alt}
+                loading="lazy"
+                className="w-full h-52 object-cover"
+              />
               <div className="p-3">
-                <p className="text-xs sm:text-sm text-wood-400">{p.desc}</p>
+                <h3 className="font-heading font-bold text-wood-700 text-sm">{p.title}</h3>
+                <p className="text-xs sm:text-sm text-wood-500 mt-1">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -46,9 +53,11 @@ export default function Gallery() {
       {lightbox && (
         <div className="fixed inset-0 bg-black/70 z-60 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <div className="max-w-2xl w-full bg-white rounded-2xl overflow-hidden max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="w-full h-64 md:h-96 bg-linear-to-br from-wood-100 to-wood-200 flex items-center justify-center">
-              <span className="text-6xl">🏠</span>
-            </div>
+            <img
+              src={lightbox.img}
+              alt={lightbox.alt}
+              className="w-full h-64 md:h-96 object-cover"
+            />
             <div className="p-6">
               <h3 className="font-heading font-bold text-wood-700 text-lg">{lightbox.title}</h3>
               <p className="text-wood-500 mt-1">{lightbox.desc}</p>

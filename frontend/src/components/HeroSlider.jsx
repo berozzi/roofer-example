@@ -1,19 +1,22 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import slide1 from '../assets/dachrem1.webp'
+import slide2 from '../assets/dachrem2.webp'
+import slide3 from '../assets/dachrem3.webp'
 
 const slides = [
   {
-    url: '',
+    url: slide1,
     title: 'Profesjonalne Dekarstwo',
     subtitle: 'Solidne dachy na lata – doświadczenie, precyzja, jakość',
   },
   {
-    url: '',
+    url: slide2,
     title: 'Ciesielstwo z Pasją',
     subtitle: 'Konstrukcje dachowe, więźby, drewniane elementy',
   },
   {
-    url: '',
+    url: slide3,
     title: 'Renowacje i Naprawy',
     subtitle: 'Przywracamy blask starym dachom – od deszczułki po dachówkę',
   },
@@ -36,6 +39,7 @@ export default function HeroSlider() {
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? 'opacity-100' : 'opacity-0'}`}
         >
+          <img src={s.url} alt="" aria-hidden="true" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-t from-wood-900/80 via-wood-900/40 to-wood-900/10" />
         </div>
       ))}
@@ -49,7 +53,7 @@ export default function HeroSlider() {
             {slides[idx].subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/realizacje" className="bg-wood-400 hover:bg-wood-500 text-white px-6 py-3 rounded font-semibold transition text-center">
+            <Link to="/realizacje" className="bg-wood-500 hover:bg-wood-600 text-white px-6 py-3 rounded font-semibold transition text-center">
               Zobacz realizacje
             </Link>
             <Link to="/kontakt" className="bg-white/20 hover:bg-white/30 backdrop-blur text-white px-6 py-3 rounded font-semibold border border-white/40 transition text-center">

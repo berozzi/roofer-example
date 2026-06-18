@@ -52,7 +52,7 @@ export default function Blog() {
             <Link
               key={a.slug}
               to={`/blog/${a.slug}`}
-              className="group bg-wood-50 border border-wood-100 rounded-2xl p-6 hover:shadow-md transition"
+              className="group bg-wood-100 border border-wood-200 rounded-2xl p-6 hover:shadow-md transition"
             >
               <div className="text-3xl mb-3">{a.icon}</div>
               <p className="text-xs text-wood-400 mb-2">{a.date}</p>

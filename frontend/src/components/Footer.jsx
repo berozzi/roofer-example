@@ -8,8 +8,8 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-heading text-lg font-bold text-white mb-3">Kontakt</h4>
-          <p>Kwiatowa 2</p>
-          <p>66-016 Nietków</p>
+          <p>ul. Przylep-Solidarności 45</p>
+          <p>65-001 Zielona Góra</p>
           <p className="mt-2">tel. 502 067 187</p>
           <p>email: sddachy@wp.pl</p>
         </div>

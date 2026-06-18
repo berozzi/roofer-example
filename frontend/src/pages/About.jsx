@@ -13,7 +13,7 @@ export default function About() {
             Nasza kadra to kompetentni i doświadczeni pracownicy, gwarantujący najwyższą jakość świadczonych usług, solidność oraz profesjonalną obsługę. Od początku działalności należymy do grupy <strong>Velux Team</strong>.
           </p>
           <p className="text-wood-500">
-            Siedziba firmy znajduje się w Nietkowie przy ul. Kwiatowej 2. Zapraszamy do kontaktu – doradzimy i pomożemy dobrać najlepsze rozwiązanie dla Twojego dachu.
+            Siedziba firmy znajduje się w Zielonej Górze przy ul. Przylep-Solidarności 45. Zapraszamy do kontaktu – doradzimy i pomożemy dobrać najlepsze rozwiązanie dla Twojego dachu.
           </p>
         </div>
         <div className="bg-wood-100 rounded-2xl h-56 md:h-80 flex items-center justify-center text-wood-300 text-lg">
@@ -25,7 +25,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-wood-50 border border-wood-100 rounded-2xl p-6 md:p-12">
+      <section className="bg-wood-100 border border-wood-200 rounded-2xl p-6 md:p-12">
         <h2 className="font-heading text-2xl text-wood-700 mb-6">Nasze wartości</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[

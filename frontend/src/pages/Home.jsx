@@ -23,16 +23,16 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((f, i) => (
-            <div key={i} className="text-center p-6 bg-wood-50 rounded-2xl border border-wood-100 hover:shadow-md transition">
+            <div key={i} className="text-center p-6 bg-wood-100 rounded-2xl border border-wood-200 hover:shadow-md transition">
               <div className="text-4xl mb-3">{f.icon}</div>
               <h3 className="font-heading text-lg font-bold text-wood-700 mb-2">{f.title}</h3>
-              <p className="text-sm text-wood-500">{f.text}</p>
+              <p className="text-sm text-wood-600">{f.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-wood-100/50 py-16 px-4">
+      <section className="bg-wood-200/30 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="font-heading text-3xl text-wood-700 mb-4">Ponad 25 lat doświadczenia w branży</h2>
           <p className="text-wood-500 mb-8 max-w-xl mx-auto">
